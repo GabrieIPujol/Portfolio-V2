@@ -27,6 +27,8 @@ export function TypedTitle({ words, className = "" }: TypedTitleProps) {
     }
 
     if (isDeleting && subIndex === 0) {
+      // Intentional synchronous state-machine transition to the next word.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsDeleting(false)
       setWordIndex((w) => (w + 1) % words.length)
       setMistakeDone(false)

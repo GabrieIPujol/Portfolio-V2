@@ -1,10 +1,10 @@
 "use client"
 
-import { createContext, useContext, useState, type ReactNode } from "react"
+import { createContext, useContext } from "react"
 
-type Language = "en" | "pt"
+export type Language = "en" | "pt"
 
-const translations = {
+export const translations = {
   pt: {
     nav: {
       education: "Education",
@@ -55,29 +55,86 @@ const translations = {
     projects: {
       title: "Projects",
       subtitle: "Some of the projects I developed during my career",
+      ui: {
+        about: "About the project",
+        highlights: "Highlights",
+        techStack: "Tech Stack",
+        viewCode: "View Code",
+        viewDemo: "Live Demo",
+        close: "Close",
+        featured: "Featured",
+        inProgress: "In Progress",
+        open: "OPEN",
+        filterAll: "All",
+        filterApp: "Web Apps",
+        filterLanding: "Landing Pages",
+        filterGame: "Games",
+      },
       projectForniture: {
         title: "E-commerce Store (Forniture)",
         description: "Complete online store with shopping cart, payment integration, and admin panel. - In Progress",
+        longDescription: "A complete online furniture store, currently in progress. It brings together a shopping cart, payment integration and an admin panel — a full e-commerce experience built to explore real-world store flows from browsing to checkout.",
+        features: [
+          "Shopping cart & checkout flow",
+          "Payment integration",
+          "Admin management panel",
+          "Fully responsive storefront",
+        ],
       },
       projectPringles: {
         title: "Pringles Website Redesign",
         description: "Restructuring of the Pringles Home Page, aiming to create a more modern and attractive interface for the user.",
+        longDescription: "A bold redesign of the Pringles homepage focused on motion and personality. GSAP-driven animations bring the brand to life through a modern, playful and highly interactive interface.",
+        features: [
+          "GSAP scroll & reveal animations",
+          "Modern brand-driven visual identity",
+          "Interactive product showcase",
+          "Fully responsive layout",
+        ],
       },
       projectCineRetro: {
         title: "Cine Retro",
         description: "Cine Retro is a website that uses a movie API, with the goal of keeping movie enthusiasts always updated on new releases.",
+        longDescription: "A movie discovery app powered by a live film API, keeping cinephiles up to date with the latest releases. Search, browse and explore movie details inside a nostalgic retro-cinema interface.",
+        features: [
+          "Real-time data from a movie API",
+          "Search & filtering by title",
+          "Detailed movie pages",
+          "Retro-inspired responsive UI",
+        ],
       },
       projectSnakeGame: {
         title: "Snake Game",
         description: "A fun game, try to beat your high score!",
+        longDescription: "The classic Snake game rebuilt from scratch with vanilla JavaScript. Simple, addictive and a great playground for game-loop logic, collision detection and score tracking.",
+        features: [
+          "Pure vanilla JavaScript game loop",
+          "Collision detection & scoring",
+          "Keyboard controls",
+          "High-score challenge",
+        ],
       },
       projectCodeFlow: {
         title: "CodeFlow",
         description: "CodeFlow is a conceptual code editing and learning platform, developed as a study project to demonstrate skills in modern web development.",
+        longDescription: "A conceptual code-editing and learning platform built as a study project. It showcases a clean editor-style interface, a typed component architecture and modern web development patterns with React and TypeScript.",
+        features: [
+          "Editor-style interface",
+          "Typed, component-driven architecture",
+          "Responsive dark UI",
+          "Built with React, TypeScript & Tailwind",
+        ],
       },
       projectAwwwards: {
         title: "Awwwards",
         description: "landing page of the winning website of awwwards",
+        longDescription: "A pixel-perfect recreation of an Awwwards-winning gaming landing page. Built to master scroll-driven storytelling, immersive video and high-end motion — the kind of frontend craft that wins design awards.",
+        features: [
+          "Scroll-triggered storytelling animations",
+          "Immersive full-bleed video hero",
+          "Micro-interactions on every element",
+          "Responsive from mobile to ultra-wide",
+        ],
       },
     },
     courses: {
@@ -184,29 +241,86 @@ const translations = {
     projects: {
       title: "Projetos",
       subtitle: "Alguns dos projetos que desenvolvi durante minha carreira",
+      ui: {
+        about: "Sobre o projeto",
+        highlights: "Destaques",
+        techStack: "Tecnologias",
+        viewCode: "Ver código",
+        viewDemo: "Ver demo",
+        close: "Fechar",
+        featured: "Destaque",
+        inProgress: "Em andamento",
+        open: "VER",
+        filterAll: "Todos",
+        filterApp: "Web Apps",
+        filterLanding: "Landing Pages",
+        filterGame: "Games",
+      },
       projectForniture: {
         title: "Loja Virtual (Forniture)",
         description: "Loja online completa com carrinho de compras, integração de pagamentos e painel administrativo. - Em andamento",
+        longDescription: "Uma loja virtual de móveis completa, atualmente em desenvolvimento. Reúne carrinho de compras, integração de pagamentos e painel administrativo — uma experiência de e-commerce completa, do catálogo ao checkout.",
+        features: [
+          "Carrinho e fluxo de checkout",
+          "Integração de pagamentos",
+          "Painel administrativo",
+          "Loja totalmente responsiva",
+        ],
       },
       projectPringles: {
         title: "Reestruturação do Website Pringles",
         description: "Reestruturação da página inicial (Home Page) da Pringles, com o objetivo de criar uma interface mais moderna e atraente para o usuário.",
+        longDescription: "Um redesign ousado da home da Pringles com foco em movimento e personalidade. Animações com GSAP dão vida à marca por meio de uma interface moderna, divertida e altamente interativa.",
+        features: [
+          "Animações de scroll e reveal com GSAP",
+          "Identidade visual moderna e alinhada à marca",
+          "Vitrine de produtos interativa",
+          "Layout totalmente responsivo",
+        ],
       },
       projectCineRetro: {
         title: "Cine Retro",
         description: "O Cine Retro é um site que utiliza uma API de filmes, com o objetivo de manter os cinéfilos sempre atualizados sobre os novos lançamentos.",
+        longDescription: "Um app de descoberta de filmes alimentado por uma API de cinema ao vivo, mantendo os cinéfilos por dentro dos últimos lançamentos. Busque, navegue e explore os detalhes dos filmes em uma interface retrô nostálgica.",
+        features: [
+          "Dados em tempo real de uma API de filmes",
+          "Busca e filtragem por título",
+          "Páginas de detalhes dos filmes",
+          "UI responsiva com pegada retrô",
+        ],
       },
       projectSnakeGame: {
         title: "Jogo da Cobrinha",
         description: "Um jogo divertido, tente bater o seu recorde!",
+        longDescription: "O clássico Jogo da Cobrinha reconstruído do zero com JavaScript puro. Simples, viciante e um ótimo laboratório para lógica de game loop, detecção de colisão e contagem de pontos.",
+        features: [
+          "Game loop em JavaScript puro",
+          "Detecção de colisão e pontuação",
+          "Controles pelo teclado",
+          "Desafio de recorde",
+        ],
       },
       projectCodeFlow: {
         title: "CodeFlow",
-        description: "O CodeFlow é uma plataforma conceitual de edição de código e aprendizado, desenvolvida como um projeto de estudo para demonstrar habilidades em desenvolvimento web moderno."
+        description: "O CodeFlow é uma plataforma conceitual de edição de código e aprendizado, desenvolvida como um projeto de estudo para demonstrar habilidades em desenvolvimento web moderno.",
+        longDescription: "Uma plataforma conceitual de edição de código e aprendizado criada como projeto de estudo. Mostra uma interface no estilo editor, uma arquitetura de componentes tipada e padrões modernos de desenvolvimento web com React e TypeScript.",
+        features: [
+          "Interface no estilo editor de código",
+          "Arquitetura tipada e baseada em componentes",
+          "UI escura e responsiva",
+          "Feito com React, TypeScript e Tailwind",
+        ],
       },
       projectAwwwards: {
         title: "Awwwards",
         description: "landing page do site ganhador do awwwards!",
+        longDescription: "Uma recriação pixel-perfect de uma landing page de games premiada no Awwwards. Feita para dominar a narrativa guiada por scroll, vídeo imersivo e movimento de alto nível — o tipo de frontend que ganha prêmios de design.",
+        features: [
+          "Animações de storytelling guiadas por scroll",
+          "Hero com vídeo imersivo em tela cheia",
+          "Microinterações em cada elemento",
+          "Responsivo do mobile ao ultra-wide",
+        ],
       },
     },
     courses: {
@@ -265,34 +379,14 @@ const translations = {
   },
 }
 
-interface LanguageContextType {
+export interface LanguageContextType {
   language: Language
   toggleLanguage: () => void
   t: (key: string) => string
+  tRaw: (key: string) => unknown
 }
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
-
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguage] = useState<Language>("pt")
-
-  const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "pt" ? "en" : "pt"))
-  }
-
-  const t = (key: string): string => {
-    const keys = key.split(".")
-    let value: any = translations[language]
-
-    for (const k of keys) {
-      value = value?.[k]
-    }
-
-    return value || key
-  }
-
-  return <LanguageContext.Provider value={{ language, toggleLanguage, t }}>{children}</LanguageContext.Provider>
-}
+export const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
 export function useLanguage() {
   const context = useContext(LanguageContext)

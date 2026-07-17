@@ -10,7 +10,6 @@ interface CustomCursorProps {
 export function CustomCursor({ enabled = true }: CustomCursorProps) {
   const [isHovering, setIsHovering] = useState(false)
   const [hoverText, setHoverText] = useState('')
-  const [mounted, setMounted] = useState(false)
   const [isOverNavOrFooter, setIsOverNavOrFooter] = useState(false)
   const styleRef = useRef<HTMLStyleElement | null>(null)
 
@@ -24,7 +23,6 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
   const cursorYSpring = useSpring(cursorY, springConfig)
 
   useEffect(() => {
-    setMounted(true)
     if (!enabled) return
 
     if (!styleRef.current) {
@@ -46,16 +44,12 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement
 
-      if (
-        target.tagName === 'BUTTON' ||
-        target.tagName === 'A' ||
-        target.closest('button') ||
-        target.closest('a') ||
-        target.classList.contains('cursor-hover')
-      ) {
+      const interactive = target.closest('button, a, .cursor-hover') as HTMLElement | null
+
+      if (interactive) {
         setIsHovering(true)
-        const text = target.getAttribute('data-cursor-text')
-        setHoverText(text || '') 
+        const text = interactive.getAttribute('data-cursor-text')
+        setHoverText(text || '')
       } else {
         setIsHovering(false)
         setHoverText('')
@@ -74,7 +68,7 @@ export function CustomCursor({ enabled = true }: CustomCursorProps) {
     }
   }, [enabled, cursorX, cursorY])
 
-  if (!mounted || !enabled) return null
+  if (!enabled) return null
 
   const finalDisplayText = hoverText || (language === 'pt' ? 'VIEW' : 'VER')
 

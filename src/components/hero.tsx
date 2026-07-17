@@ -5,6 +5,15 @@ import { ChevronDown } from "lucide-react"
 import { useLanguage } from "../contexts/language-context"
 import { TypedTitle } from "./typed-title"
 
+// Computed once at module load so particles keep a stable path across re-renders.
+const PARTICLES = Array.from({ length: 20 }, () => ({
+  startX: Math.random() * window.innerWidth,
+  startY: Math.random() * window.innerHeight,
+  endX: Math.random() * window.innerWidth,
+  endY: Math.random() * window.innerHeight,
+  duration: Math.random() * 10 + 10,
+}))
+
 export function Hero() {
   const { t } = useLanguage()
 
@@ -16,20 +25,20 @@ export function Hero() {
     <section className="relative min-h-screen flex items-center justify-center overflow-visible">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-linear-to-br from-background via-background to-cyan-950/10 dark:to-cyan-500/5" />
-        {[...Array(20)].map((_, i) => (
+        {PARTICLES.map((particle, i) => (
           <motion.div
             key={i}
             className="absolute w-2 h-2 bg-cyan-500/20 rounded-full"
             initial={{
-              x: Math.random() * window.innerWidth,
-              y: Math.random() * window.innerHeight,
+              x: particle.startX,
+              y: particle.startY,
             }}
             animate={{
-              y: [null, Math.random() * window.innerHeight],
-              x: [null, Math.random() * window.innerWidth],
+              y: [null, particle.endY],
+              x: [null, particle.endX],
             }}
             transition={{
-              duration: Math.random() * 10 + 10,
+              duration: particle.duration,
               repeat: Number.POSITIVE_INFINITY,
               repeatType: "reverse",
             }}

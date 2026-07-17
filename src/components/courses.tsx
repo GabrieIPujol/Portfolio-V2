@@ -137,7 +137,7 @@ export function Courses() {
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 className="mt-6 space-y-2 transition-opacity duration-300"
               >
-                {course.skills.split(",").map((skill: any, i: any) => (
+                {course.skills.split(",").map((skill: string, i: number) => (
                   <motion.div
                     key={i}
                     initial={{ x: -20, opacity: 0 }}
