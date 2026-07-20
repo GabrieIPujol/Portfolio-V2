@@ -108,7 +108,7 @@ export function Technologies() {
                         className="h-10 w-10 rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center"
                         style={{ boxShadow: `0 10px 30px ${tech.color}33` }}
                       >
-                        <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
+                        <img src={tech.icon} alt={tech.name} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
                       </div>
                       <span className="text-sm font-semibold text-muted-foreground">{tech.name}</span>
                     </motion.div>
@@ -144,7 +144,7 @@ export function Technologies() {
                         className="h-10 w-10 rounded-2xl overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center"
                         style={{ boxShadow: `0 10px 30px ${tech.color}33` }}
                       >
-                        <img src={tech.icon} alt={tech.name} className="h-8 w-8 object-contain" />
+                        <img src={tech.icon} alt={tech.name} loading="lazy" decoding="async" className="h-8 w-8 object-contain" />
                       </div>
                       <span className="text-sm font-semibold text-muted-foreground">{tech.name}</span>
                     </motion.div>

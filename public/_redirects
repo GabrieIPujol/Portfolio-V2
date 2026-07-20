@@ -1,0 +1,3 @@
+# Consolida o domínio antigo no novo (preserva o SEO já indexado)
+http://gabriel-pujol-portfolio.netlify.app/*   https://gabrielpujol.com.br/:splat   301!
+https://gabriel-pujol-portfolio.netlify.app/*  https://gabrielpujol.com.br/:splat   301!

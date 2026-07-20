@@ -96,7 +96,7 @@ export function ProjectModal({ project, index, onClose }: { project: ProjectMeta
           className="relative aspect-video w-full overflow-hidden"
           transition={{ type: "spring", stiffness: 220, damping: 30 }}
         >
-          <img src={project.image} alt={title} className="h-full w-full object-cover" />
+          <img src={project.image} alt={title} decoding="async" className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-t from-card via-card/40 to-transparent" />
           <div className={`absolute inset-x-0 bottom-0 h-1.5 bg-linear-to-r ${project.gradient}`} />
 

@@ -57,7 +57,12 @@ export function Hero() {
               transition={{ duration: 5, repeat: Number.POSITIVE_INFINITY }}
               style={{ backgroundSize: "200% auto" }}
             >
-              <TypedTitle words={["Gabriel Pujol Amaral Gurgel Velosa", "Full Stack Developer"]} />
+              {/* Stable text for crawlers/screen readers — the typed animation never
+                  holds the full string, so the h1 would otherwise read as empty. */}
+              <span className="sr-only">Gabriel Pujol Amaral Gurgel Velosa — Full Stack Developer</span>
+              <span aria-hidden="true">
+                <TypedTitle words={["Gabriel Pujol Amaral Gurgel Velosa", "Full Stack Developer"]} />
+              </span>
             </motion.h1>
           </motion.div>
 

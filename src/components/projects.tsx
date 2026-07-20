@@ -15,13 +15,13 @@ import { Button } from "../components/ui/button"
 import { useLanguage } from "../contexts/language-context"
 import { getTechMeta } from "./tech-icon"
 import { ProjectModal, type ProjectMeta } from "./project-modal"
-import projectImgForniture from "../assets/forniture-project.png"
-import projectImgPringles from "../assets/pringles-project.png"
-// import projectImgProgress from "../assets/InProgress-project.png"
-import projectImgSnakeGame from "../assets/snakeGame-project.jpg"
-import projectImgCodeFlow from "../assets/codeFlow-project.png"
-import projectImgAwwwards from "../assets/awwwards-project.png"
-import projectImgCineRetro from "../assets/cineRetro-project.png"
+import projectImgForniture from "../assets/forniture-project.webp"
+import projectImgPringles from "../assets/pringles-project.webp"
+// import projectImgProgress from "../assets/InProgress-project.webp"
+import projectImgSnakeGame from "../assets/snakeGame-project.webp"
+import projectImgCodeFlow from "../assets/codeFlow-project.webp"
+import projectImgAwwwards from "../assets/awwwards-project.webp"
+import projectImgCineRetro from "../assets/cineRetro-project.webp"
 
 const projects: ProjectMeta[] = [
   {
@@ -308,6 +308,8 @@ function ProjectCard({
                 <motion.img
                   src={project.image}
                   alt={title}
+                  loading="lazy"
+                  decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"
                   animate={isHovered ? { scale: 1.06 } : { scale: 1.01 }}
                   transition={{ duration: 0.4 }}
