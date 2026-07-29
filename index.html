@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/logo.svg" />
-  <link rel="icon" type="image/png" href="/logo.svg" />
+  <link rel="icon" href="%BASE_URL%logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="%BASE_URL%logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -16,9 +16,12 @@
   <meta name="keywords"
     content="Gabriel Pujol, Gabriel Velosa, Gabriel Pujol Amaral Gurgel Velosa, Full Stack Developer, Frontend Developer, Backend Developer, Web Developer, Portfolio, JavaScript, React, Vue, Node.js, Web Applications" />
   <meta name="author" content="Gabriel Pujol" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <!-- Deploy secundario (GitHub Pages): mantido fora do indice para nao competir
+       com o site principal em gabrielpujol.com.br. Trocar para "index, follow"
+       se este passar a ser o site oficial. -->
+  <meta name="robots" content="noindex, follow" />
   <meta name="theme-color" content="#00B8DB" />
-  <link rel="canonical" href="https://gabrielpujol.com.br/" />
+  <link rel="canonical" href="https://gabrieipujol.github.io/Portfolio-V2/" />
 
   <meta property="og:site_name" content="Gabriel Pujol" />
   <meta property="og:locale" content="pt_BR" />
@@ -27,9 +30,9 @@
   <meta property="og:description"
     content="Explore projects and experiences by Gabriel Pujol, a Full-Stack Developer building modern and scalable web applications." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://gabrielpujol.com.br/" />
+  <meta property="og:url" content="https://gabrieipujol.github.io/Portfolio-V2/" />
 
-  <meta property="og:image" content="https://gabrielpujol.com.br/og-image.png" />
+  <meta property="og:image" content="https://gabrieipujol.github.io/Portfolio-V2/og-image.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -39,7 +42,7 @@
   <meta name="twitter:title" content="Gabriel Pujol | Full-Stack Developer Portfolio" />
   <meta name="twitter:description"
     content="Explore projects and experiences by Gabriel Pujol, a Full-Stack Developer building modern and scalable web applications." />
-  <meta name="twitter:image" content="https://gabrielpujol.com.br/og-image.png" />
+  <meta name="twitter:image" content="https://gabrieipujol.github.io/Portfolio-V2/og-image.png" />
 
   <script type="application/ld+json">
   {
@@ -47,20 +50,20 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://gabrielpujol.com.br/#website",
-        "url": "https://gabrielpujol.com.br/",
+        "@id": "https://gabrieipujol.github.io/Portfolio-V2/#website",
+        "url": "https://gabrieipujol.github.io/Portfolio-V2/",
         "name": "Gabriel Pujol",
         "alternateName": "Gabriel Pujol | Full-Stack Developer Portfolio",
         "inLanguage": "pt-BR",
-        "publisher": { "@id": "https://gabrielpujol.com.br/#person" }
+        "publisher": { "@id": "https://gabrieipujol.github.io/Portfolio-V2/#person" }
       },
       {
         "@type": "Person",
-        "@id": "https://gabrielpujol.com.br/#person",
+        "@id": "https://gabrieipujol.github.io/Portfolio-V2/#person",
         "name": "Gabriel Pujol",
         "alternateName": "Gabriel Pujol Amaral Gurgel Velosa",
-        "url": "https://gabrielpujol.com.br/",
-        "image": "https://gabrielpujol.com.br/og-image.png",
+        "url": "https://gabrieipujol.github.io/Portfolio-V2/",
+        "image": "https://gabrieipujol.github.io/Portfolio-V2/og-image.png",
         "jobTitle": "Full-Stack Developer",
         "email": "mailto:gabriel.pagvelosa@gmail.com",
         "nationality": "Brazilian",
@@ -73,12 +76,12 @@
       },
       {
         "@type": "ProfilePage",
-        "@id": "https://gabrielpujol.com.br/#webpage",
-        "url": "https://gabrielpujol.com.br/",
+        "@id": "https://gabrieipujol.github.io/Portfolio-V2/#webpage",
+        "url": "https://gabrieipujol.github.io/Portfolio-V2/",
         "name": "Gabriel Pujol | Full-Stack Developer Portfolio",
         "description": "Portfolio of Gabriel Pujol, a Full-Stack Developer showcasing modern web projects, applications, and real-world solutions.",
-        "isPartOf": { "@id": "https://gabrielpujol.com.br/#website" },
-        "about": { "@id": "https://gabrielpujol.com.br/#person" },
+        "isPartOf": { "@id": "https://gabrieipujol.github.io/Portfolio-V2/#website" },
+        "about": { "@id": "https://gabrieipujol.github.io/Portfolio-V2/#person" },
         "inLanguage": "pt-BR"
       }
     ]
